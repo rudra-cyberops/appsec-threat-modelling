@@ -1,0 +1,9 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}View Address{% endblock %}
+
+{% block content %}
+    <h2>View Address</h2>
+    <p>{{ address }}</p>
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">Back to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Address Book - Home{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Your Address Book</h1>
+        <p class="lead">Manage your addresses with ease.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+    </div>
+
+    <h2>Your Addresses</h2>
+    <ul>
+        {% for address in addresses %}
+            <li><a href="{% url 'view_address' address.id %}">{{ address }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a class="btn btn-success" href="{% url 'create_address' %}" role="button">Create New Address</a>
+{% endblock %}
